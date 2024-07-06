@@ -1,0 +1,31 @@
+body,
+html {
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+
+form {
+	margin: 0 auto;
+	border: solid 1px #000;
+	padding: 20px;
+	height: 400px;
+	width: 400px;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	background-color: #fff;
+}
+
+.titulo {
+	text-align: center;
+}
+
+.inputs {}
+
+input {
+	margin: 10px 0;
+	height: 20px;
+}
