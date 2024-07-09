@@ -1,10 +1,15 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { fileTypeFromBuffer } from 'file-type'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import fs from 'node:fs'
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT_SERVER;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -57,6 +62,13 @@ app.post('/', (req, res) => {
 app.post('/image', validarImage, (req, res) => {
 	const image = req.body;
 	console.log(image)
+	const dirStorageImg = path.join(__dirname, 'storage');
+
+	if (!fs.existsSync(dirStorageImg)) {
+		fs.mkdirSync(dirStorageImg);
+	}
+	const nombreArchivo = `${Date.now()}.${req.extensionArchivo}`;
+	fs.writeFileSync(path.join(dirStorageImg, nombreArchivo), image);
 	res.json({ success: true })
 })
 
