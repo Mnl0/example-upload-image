@@ -37,30 +37,27 @@ function Login() {
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<div className='titulo'>
-					<h1>Login</h1>
-				</div>
-				<div className='inputs'>
-					<input
-						type='text'
-						placeholder='username'
-						name='username'
-						onChange={(e) => handleChange(e)}
-						required
-					/>
-					<input
-						type='password'
-						placeholder='password'
-						name='password'
-						onChange={(e) => handleChange(e)}
-						required
-					/>
-				</div>
+				<h1>Bienvenido</h1>
+				<h2>Iniciar Sesion</h2>
+				<input
+					type='text'
+					placeholder='username'
+					name='username'
+					onChange={(e) => handleChange(e)}
+					required
+				/>
+				<input
+					type='password'
+					placeholder='password'
+					name='password'
+					onChange={(e) => handleChange(e)}
+					required
+				/>
 				<button
-					type='submit'>
-					Ingresar
+					type='submit'
+				>
+					SingIn
 				</button>
-
 			</form>
 		</>
 	)
