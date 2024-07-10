@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login.jsx'
 import Formulario from './pages/Formulario.jsx';
 import Resultado from './pages/Resultado.jsx'
+import './app.css';
 
 
 function App() {

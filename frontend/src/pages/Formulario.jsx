@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import "./test-form.css";
 
 function Formulario() {
 	const [image, setImage] = useState();
+	const [fileName, setFileName] = useState('Ningun Archivo Seleccionado');
 
 	const handleFile = (event) => {
 		setImage(event.target.files[0]);
@@ -30,15 +32,30 @@ function Formulario() {
 	}
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
-				<h1>Ingresar una imagen</h1>
-				<input
-					type="file"
-					name="image"
-					onChange={handleFile}
-				/>
-				<button>Enviar Imagen</button>
-			</form>
+			<div className="container-form">
+				<form onSubmit={handleSubmit}>
+					<img src="/logo-power-star.png"
+						alt="Logo de Power Start"
+					/>
+					<h2>Ingresa una imagen</h2>
+					<label
+						htmlFor="image"
+						className="label-image"
+					>Selecciona una imagen
+					</label>
+					<input
+						id="image"
+						type="file"
+						name="image"
+						onChange={handleFile}
+					/>
+					<span className="file-name"
+					>{fileName}</span>
+					<button
+						className="button-submit"
+					>Subir Imagen</button>
+				</form>
+			</div>
 		</>
 	)
 }
